@@ -21,7 +21,7 @@ const Presentation = () => {
                 <KidsImageContainer src={kids}/>
             </div>
 
-            <Link to="/">Ir para o site</Link>
+            <Link to="/home">Ir para o site</Link>
         </Container>
     )
 }
