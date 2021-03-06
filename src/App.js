@@ -1,8 +1,15 @@
-import Presentation from "./pages/Presentation";
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import Routes from './routes';
+
+import GlobalStyles from './styles/global';
 
 const App = () => {
   return (
-    <Presentation />
+    <Router>
+      <Routes />
+      <GlobalStyles />
+    </Router>
   )
 }
 
