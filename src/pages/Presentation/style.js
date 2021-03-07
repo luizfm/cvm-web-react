@@ -70,8 +70,10 @@ export const Content = styled.div`
         }
     }
 
-    align-items: center;
-    justify-content: center;
+    @media(max-width: 940px) {
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export const LogoImageContainer = styled.div`

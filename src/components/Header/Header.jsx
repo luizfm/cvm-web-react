@@ -11,7 +11,7 @@ import { HeaderContainer, LogoContainer, LinksContainer, LoginContainer, Logo, I
 import MobileLinksHeader from './MobileLinksHeader/MobileLinksHeader';
 
 const Header = () => {
-    const [isHeaderOptionsModalVisible, setIsHeaderOptionsModalVisible] = useState(true);
+    const [isHeaderOptionsModalVisible, setIsHeaderOptionsModalVisible] = useState(false);
 
     const handleHeaderOptionModalVisibility = useCallback(() => {
         setIsHeaderOptionsModalVisible(!isHeaderOptionsModalVisible)
@@ -26,15 +26,15 @@ const Header = () => {
             </LogoContainer>
 
             <LinksContainer>
+                <Button backgroundColor="transparent" onClick={handleHeaderOptionModalVisibility}>
+                    <BiMenu size={36}/>
+                </Button>
+
                 <Link to="/">A Cvm</Link>
                 <Link to="/">Educação Infatil</Link>
                 <Link to="/">Acolhimento institucional</Link>
                 <Link to="/">Centro de Atendimento Social</Link>
                 <Link to="/">Ajude</Link>
-
-                <Button backgroundColor="transparent" onClick={handleHeaderOptionModalVisibility}>
-                    <BiMenu size={36}/>
-                </Button>
             </LinksContainer>
 
             {isHeaderOptionsModalVisible && <MobileLinksHeader onClick={handleHeaderOptionModalVisibility} />}
