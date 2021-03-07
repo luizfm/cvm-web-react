@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BiArrowToRight, BiMenu } from 'react-icons/bi';
 
 import logoImg from '../../assets/logo.svg';
 import Button from '../Button';
 import Flex from '../Flex';
 import Input from '../Input';
 
-import { HeaderContainer, LogoContainer, LinksContainer, LoginContainer, Logo } from './style';
+import { HeaderContainer, LogoContainer, LinksContainer, LoginContainer, Logo, InputsContainer } from './style';
+import MobileLinksHeader from './MobileLinksHeader/MobileLinksHeader';
 
 const Header = () => {
+    const [isHeaderOptionsModalVisible, setIsHeaderOptionsModalVisible] = useState(true);
+
+    const handleHeaderOptionModalVisibility = useCallback(() => {
+        setIsHeaderOptionsModalVisible(!isHeaderOptionsModalVisible)
+    }, [isHeaderOptionsModalVisible])
+
     return (
         <HeaderContainer>
             <LogoContainer>
@@ -23,14 +31,34 @@ const Header = () => {
                 <Link to="/">Acolhimento institucional</Link>
                 <Link to="/">Centro de Atendimento Social</Link>
                 <Link to="/">Ajude</Link>
+
+                <Button backgroundColor="transparent" onClick={handleHeaderOptionModalVisibility}>
+                    <BiMenu size={36}/>
+                </Button>
             </LinksContainer>
 
+            {isHeaderOptionsModalVisible && <MobileLinksHeader onClick={handleHeaderOptionModalVisibility} />}
+
             <LoginContainer>
-                <Input name="email"backgroundColor="#8FE6F5" placeholder="Email" type="email"/>
-                <Input name="password" backgroundColor="#8FE6F5" placeholder="Senha" type="password"/>
+                <InputsContainer>
+                    <Input 
+                        name="email"
+                        backgroundColor="#8FE6F5" 
+                        placeholder="Email" 
+                        type="email"
+                    />
+                    <Input 
+                        name="password" 
+                        backgroundColor="#8FE6F5" 
+                        placeholder="Senha" 
+                        type="password"
+                    />
+                </InputsContainer>
 
                 <Flex marginLeft="12px">
-                    <Button backgroundColor="#EDFF8F" borderRadius="12px">Entrar</Button>
+                    <Button backgroundColor="#EDFF8F" borderRadius="12px">
+                        <BiArrowToRight color="#12AFCB" size={24} />
+                    </Button>
                 </Flex>
             </LoginContainer>
         </HeaderContainer>

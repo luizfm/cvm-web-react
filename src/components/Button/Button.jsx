@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import { ButtonContainer } from './style';
 
-const Button = ({ children, backgroundColor, color, borderRadius, height, ...props }) => {
+const Button = ({ children, onClick, backgroundColor, color, borderRadius, height, ...props }) => {
     return (
         <ButtonContainer 
+            onClick={onClick}
             backgroundColor={backgroundColor} 
             height={height} 
             borderRadius={borderRadius}
@@ -19,9 +20,19 @@ const Button = ({ children, backgroundColor, color, borderRadius, height, ...pro
 
 Button.propTypes = {
     backgroundColor: PropTypes.string,
+    onClick: PropTypes.func,
     height: PropTypes.string,
     borderRadius: PropTypes.string,
     color: PropTypes.string
 }
+
+Button.defaultProps = {
+    backgroundColor: null,
+    onClick: () => {},
+    height: null,
+    borderRadius: null,
+    color: null
+}
+
 
 export default Button;
