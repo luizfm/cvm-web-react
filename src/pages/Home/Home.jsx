@@ -1,16 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer';
+import volunteerImageCall from '../../assets/volunteercall.svg';
 
-import { HomeContainer } from './style';
+import { 
+    HomeContainer, 
+    HeroSection, 
+    NoticeSection, 
+    SocialMediaSection, 
+    LawInformationSection, 
+    ImageContainer,
+    NoticeContainer
+} from './style';
 
 const Home = () => {
     return (
         <HomeContainer>
-            <Header />
+            <HeroSection>
+                <Link to="/">
+                    <ImageContainer src={volunteerImageCall} />
+                </Link>
+            </HeroSection>
 
-            <Footer />
+            <NoticeSection>
+                <h2>
+                    Resumo de Notícias
+                </h2>
+
+                <NoticeContainer>
+                    <p>aoisehasoiehasiehaaos</p>
+                </NoticeContainer>
+            </NoticeSection>
+
+            <SocialMediaSection>
+
+            </SocialMediaSection>
+
+            <LawInformationSection>
+
+            </LawInformationSection>
         </HomeContainer>
     )
 }
