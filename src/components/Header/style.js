@@ -1,7 +1,7 @@
 import { shade } from 'polished';
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.head`
+export const HeaderContainer = styled.header`
     display: flex;
     padding: 1rem 5rem;
     background: #12AFCB;
@@ -72,7 +72,16 @@ export const LoginContainer = styled.div`
 export const InputsContainer = styled.div`
     display: flex;
 
+    input {
+        margin-right: 4px;
+    }
+
     @media(max-width: 1119px) {
-        flex-direction: column;   
+        flex-direction: column;
+        margin-right: 0px;
+        
+        input {
+            margin-bottom: 4px;
+        }
     }
 `;

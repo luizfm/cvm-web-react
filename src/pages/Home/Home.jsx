@@ -1,12 +1,17 @@
 import React from 'react';
 
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer';
+
+import { HomeContainer } from './style';
 
 const Home = () => {
     return (
-        <div>
+        <HomeContainer>
             <Header />
-        </div>
+
+            <Footer />
+        </HomeContainer>
     )
 }
 
