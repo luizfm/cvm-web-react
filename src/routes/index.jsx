@@ -2,14 +2,20 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Presentation from '../pages/Presentation';
-// import Home from '../pages/Home;'
+import Home from '../pages/Home';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Routes = () => {
     return (
         <Switch>
             <Route exact path="/" component={Presentation} />
 
-            {/* <Route path="/home" component={Home} /> */}
+            <>
+                <Header />
+                <Route path="/home" component={Home} />
+                <Footer />
+            </>
         </Switch>
     )
 }
