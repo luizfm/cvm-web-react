@@ -13,6 +13,18 @@ export const HeroSection = styled.section`
 
 export const ImageContainer = styled.img`
     height: 800px;
+
+    @media(max-width: 850px) {
+        height: 600px
+    }
+
+    @media(max-width: 650px) {
+        height: 400px
+    }
+
+    @media(max-width: 450px) {
+        height: 280px
+    }
 `;
 
 export const NoticeSection = styled.section`
@@ -42,6 +54,10 @@ export const NoticeContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 460px) {
+        border: 0;
+    }
 `;
 
 export const NoticeDatesContainer = styled.div`
@@ -51,6 +67,8 @@ export const NoticeDatesContainer = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        margin-bottom: 32px;
 
         p {
             margin-right: 1rem;
@@ -77,7 +95,16 @@ export const NoticeDatesContainer = styled.div`
         & + div {
             margin-top: 16px;
         }
-        margin-bottom: 32px;
+
+        @media(max-width: 620px) {
+            button {
+                width: 250px;
+            }
+        }
+
+        @media(max-width: 450px) {
+            flex-direction: column;
+        }
     }
 
     a {
@@ -105,8 +132,19 @@ export const SocialMediaContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    div {
+    > span {
         flex: 1;
+
+        .illustration-comp {
+
+        width: 2000px;
+        height: 2000px;
+
+        }
+    }
+
+    @media(max-width: 880px) {
+        flex-direction: column;
     }
 
 `;
@@ -115,6 +153,10 @@ export const SocialMediaLinks = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    @media(max-width: 880px) {
+        flex-direction: row;
+    }
 `;
 
 export const MediaLink = styled.div`
@@ -144,11 +186,30 @@ export const MediaLink = styled.div`
         p {
             color: #E3CECE;
         }
+
+        @media(max-width: 1080px) {
+            max-width: 350px;
+        }
+
+        @media(max-width: 980px) {
+            max-width: 250px;
+        }
+
+        @media(max-width: 880px) {
+            display: none;
+        }
     }
 
 
     & + div {
         margin-top: 5rem;  
+    }
+
+    @media(max-width: 880px) {
+        & + div {
+            margin-top: 0;
+            margin-left: 24px;
+        }
     }
 `;
 
@@ -176,6 +237,14 @@ export const LawInformationContent = styled.div`
         flex: 1;
         margin-left: 50px;
     }
+
+    @media(max-width: 979px) {
+        flex-direction: column;
+        
+        > div {
+            margin-left: 0;
+        }
+    }
 `;
 
 export const LawLinks = styled.div`
@@ -193,6 +262,8 @@ export const LawLinks = styled.div`
     align-items: center;
     justify-content: center;
 
+    text-align: center;
+
     h3, h5 {
         color: #12AFCB;
         margin-bottom: 24px;
@@ -200,6 +271,19 @@ export const LawLinks = styled.div`
 
     a {
         color: #12AFCB;
+    }
+
+    @media(min-width: 980px) and (max-width: 1179px) {
+        width: 400px;
+    }
+
+    @media(max-width: 979px) {
+        width: 600px;
+        margin-right: 0;
+    }
+
+    @media(max-width: 650px) {
+        width: 280px;
     }
 `;
 

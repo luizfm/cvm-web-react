@@ -27,8 +27,11 @@ import {
 } from './style';
 import Separator from '../../components/Separator';
 import Flex from '../../components/Flex/Flex';
+import { useMediaQuery } from '../../hooks/mediaQuery';
 
 const Home = () => {
+    const hasMediaMatch = useMediaQuery('(min-width: 500px)');
+
     const [animationState] = useState({
         isStopped: false, isPaused: false
     });
@@ -102,15 +105,14 @@ const Home = () => {
                 </h2>
 
                 <SocialMediaContainer>
-                    <div>
-                        <Lottie 
+                    <span>
+                        <Lottie
+                            style={hasMediaMatch ? styles.container : styles.containerMobile}
                             options={defaultOptions(socialMediaData)}
-                            height={430}
-                            width={430}
                             isPaused={animationState.isPaused}
                             isStopped={animationState.isStopped}
                         />
-                    </div>
+                    </span>
 
                     <SocialMediaLinks>
                         <MediaLink>
@@ -194,10 +196,9 @@ const Home = () => {
                     </LawLinks>
 
                     <div>
-                        <Lottie 
+                        <Lottie
+                            style={hasMediaMatch ? styles.container : styles.containerMobile}
                             options={defaultOptions(financialData)}
-                            height={400}
-                            width={400}
                             isPaused={animationState.isPaused}
                             isStopped={animationState.isStopped}
                         />
@@ -207,5 +208,16 @@ const Home = () => {
         </HomeContainer>
     )
 }
+
+const styles = {
+    containerMobile: {
+        width: 270,
+        height: 270,
+    },
+    container: {
+        width: 430,
+        height: 430
+    }
+  };
 
 export default Home;
