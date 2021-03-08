@@ -11,5 +11,7 @@ export const FlexContainer = styled.div`
     `};
     align-items: ${({ alignItems }) => alignItems ? alignItems : ""};
     justify-content: ${({ justifyContent }) => justifyContent ? justifyContent : ""};
-    direction: ${({ direction }) => direction ? direction : ""}
+    direction: ${({ direction }) => direction ? direction : ""};
+    padding-left: ${({ padding }) => padding ? padding : ""};
+    padding-right: ${({ padding }) => padding ? padding : ""};
 `;

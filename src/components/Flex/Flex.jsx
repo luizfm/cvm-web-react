@@ -12,7 +12,9 @@ const Flex = ({
     alignItems, 
     justifyContent, 
     direction, 
-    children }) => {
+    children,
+    padding
+}) => {
     return (
         <FlexContainer
             marginRight={marginRight}
@@ -23,6 +25,7 @@ const Flex = ({
             flex={flex}
             alignItems={alignItems}
             justifyContent={justifyContent}
+            padding={padding}
         >
             {children}
         </FlexContainer>
@@ -37,7 +40,8 @@ Flex.propTypes = {
     flex: PropTypes.number,
     alignItems: PropTypes.string,
     justifyContent: PropTypes.string,
-    direction: PropTypes.string
+    direction: PropTypes.string,
+    padding: PropTypes.string
 }
 
 Flex.defaultProps = {
@@ -48,7 +52,8 @@ Flex.defaultProps = {
     marginBottom: null,
     flex: null,
     alignItems: null,
-    justifyContent: null
+    justifyContent: null,
+    padding: null
 }
 
 export default Flex;
