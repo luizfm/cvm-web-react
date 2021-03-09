@@ -6,10 +6,11 @@ import studentsImage from '../../assets/students.png'
 
 import CustomText from '../../components/CustomText';
 import Flex from '../../components/Flex';
+import Separator from '../../components/Separator';
 
 import TextWithImage from '../../components/TextWithImage';
 
-import { HistoryContainer } from './style';
+import { HistoryContainer, IdentityContainer } from './style';
 
 const History = () => {
     return (
@@ -76,6 +77,14 @@ const History = () => {
                     adolescentes, e a partir do ano de 2007 passou a atender adultos.
                 </CustomText>
             </TextWithImage>
+
+            <IdentityContainer>
+                <CustomText color="#fff">Da nossa identidade</CustomText>
+
+                <Flex marginTop="48px" marginBottom="24px">
+                    <Separator backgroundColor="#fff"/>
+                </Flex>
+            </IdentityContainer>
         </HistoryContainer>
     )
 }
