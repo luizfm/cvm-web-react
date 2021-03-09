@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
 import { FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
@@ -36,7 +36,7 @@ const Home = () => {
         isStopped: false, isPaused: false
     });
 
-    const defaultOptions = (data) => {
+    const defaultOptions = useCallback((data) => {
         return {
             loop: true,
             autoplay: true,
@@ -45,7 +45,7 @@ const Home = () => {
                 preserveAspectRadio: 'xMidYMid slice'
             }
         }
-    }
+    }, []);
     
     return (
         <HomeContainer>

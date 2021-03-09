@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import Presentation from '../pages/Presentation';
 import Home from '../pages/Home';
 import History from '../pages/History';
-
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
