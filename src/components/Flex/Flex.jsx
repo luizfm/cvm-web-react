@@ -37,7 +37,7 @@ Flex.propTypes = {
     marginLeft: PropTypes.string,
     marginTop: PropTypes.string,
     marginBottom: PropTypes.string,
-    flex: PropTypes.number,
+    flex: PropTypes.bool,
     alignItems: PropTypes.string,
     justifyContent: PropTypes.string,
     direction: PropTypes.string,
@@ -50,7 +50,7 @@ Flex.defaultProps = {
     marginLeft: null,
     marginTop: null,
     marginBottom: null,
-    flex: null,
+    flex: false,
     alignItems: null,
     justifyContent: null,
     padding: null
