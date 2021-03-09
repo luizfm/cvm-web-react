@@ -30,7 +30,7 @@ const Header = () => {
                     <BiMenu size={36}/>
                 </Button>
 
-                <Link to="/">A Cvm</Link>
+                <Link to="/history">A Cvm</Link>
                 <Link to="/">Educação Infatil</Link>
                 <Link to="/">Acolhimento institucional</Link>
                 <Link to="/">Centro de Atendimento Social</Link>
