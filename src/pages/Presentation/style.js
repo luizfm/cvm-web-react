@@ -3,7 +3,7 @@ import { shade } from 'polished';
 
 
 export const Container = styled.div`
-    height: 100vh;
+    padding: 1.75rem;
 
     background: #12AFCB;
 
@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
 
     a {
-        margin-top: 5rem;
+        margin-top: 1rem;
         padding: 1rem;
         background: #EDFF8F;
         color: #FF9668;
@@ -56,7 +56,7 @@ export const Content = styled.div`
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #fff;
         max-width: 420px;
 
@@ -77,12 +77,15 @@ export const Content = styled.div`
 `;
 
 export const LogoImageContainer = styled.div`
-    position: relative;
     height: 50%;
+    
+    img {
+        height: 200px;
+    }
 `;
 
 export const KidsImageContainer = styled.img`
-    height: 470px;
+    height: 370px;
     margin-top: 60px;   
     margin-left: 100px;
 
