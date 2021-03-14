@@ -3,7 +3,7 @@ import { shade } from 'polished';
 
 
 export const Container = styled.div`
-    padding: 1.75rem;
+    height: 100vh;
 
     background: #12AFCB;
 
