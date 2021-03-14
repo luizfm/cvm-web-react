@@ -48,6 +48,8 @@ const History = () => {
         }
     }, []);
 
+    const handleFontSize = hasMediaMatch ? "16px" : "12px";
+
     return (
         <HistoryContainer>
             <AboutUsContainer>
@@ -55,35 +57,35 @@ const History = () => {
 
                 <TextWithImage imagePath={cvmBuildingImage} margin="24px" rotateImage="12deg">
                     <Flex marginBottom="24px">
-                        <CustomText>
+                        <CustomText fontSize={handleFontSize}>
                             Entidade filantrópica assistencial sem fins lucrativos, declarada de utilidade pública 
                             pelo Governo Municipal, Estadual e Federal, esta registrada no Conselho Nacional de 
                             Assistência Social e possui Certificado de Filantropia.
                         </CustomText>
                     </Flex>
 
-                    <CustomText>
+                    <CustomText fontSize={handleFontSize}>
                         Fundada em 1º de novembro de 1978 para ajudar crianças, adolescentes e adultos 
                         abandonados e com risco social.
                     </CustomText>
                 </TextWithImage>
 
                 <TextWithImage imagePath={kidsImage} margin="48px" direction="row-reverse" rotateImage="-12deg">
-                    <CustomText>
+                    <CustomText fontSize={handleFontSize}>
                         Importante obra, resultado do trabalho de “Dona Jandira Jovita da Rosa” e de 
                         “Dona Geny Julia Feijó”, evangélicas que em 1978 realizaram a missão de fundar 
                         esta entidade.
                     </CustomText>
 
                     <Flex marginBottom="24px">
-                        <CustomText>
+                        <CustomText fontSize={handleFontSize}>
                         O ideal inicial de Dona Jandira e Dona Geny era iniciar o atendimento com 01 
                         (uma) creche para crianças de 0 a 06 anos. Em julho de 1980 Dona Geny 
                         faleceu e em junho de 1985 faleceu também Dona Jandira.
                         </CustomText>
                     </Flex>
 
-                    <CustomText>
+                    <CustomText fontSize={handleFontSize}>
                         Em 1986, a instituição fundou o Lar Jandira Jovita da Rosa, para atender crianças 
                         de 0 a 18 anos abandonados e/ou vitimas de maus tratos, em 1996 foi aberta a 
                         Comunidade Terapêutica Dona Geny Julia Feijó, que no início só atendia crianças e 
@@ -92,21 +94,21 @@ const History = () => {
                 </TextWithImage>
 
                 <TextWithImage imagePath={studentsImage} margin="48px" flex>
-                    <CustomText>
+                    <CustomText fontSize={handleFontSize}>
                         Importante obra, resultado do trabalho de “Dona Jandira Jovita da Rosa” e de 
                         “Dona Geny Julia Feijó”, evangélicas que em 1978 realizaram a missão de fundar 
                         esta entidade.
                     </CustomText>
 
                     <Flex marginBottom="24px">
-                        <CustomText>
+                        <CustomText fontSize={handleFontSize}>
                         O ideal inicial de Dona Jandira e Dona Geny era iniciar o atendimento com 01 
                         (uma) creche para crianças de 0 a 06 anos. Em julho de 1980 Dona Geny 
                         faleceu e em junho de 1985 faleceu também Dona Jandira.
                         </CustomText>
                     </Flex>
 
-                    <CustomText>
+                    <CustomText fontSize={handleFontSize}>
                         Em 1986, a instituição fundou o Lar Jandira Jovita da Rosa, para atender crianças 
                         de 0 a 18 anos abandonados e/ou vitimas de maus tratos, em 1996 foi aberta a 
                         Comunidade Terapêutica Dona Geny Julia Feijó, que no início só atendia crianças e 
@@ -138,14 +140,14 @@ const History = () => {
                         </LabeledText>
 
                         <LabeledText label="Valores">
-                            <CustomText color="#fff">- Ética;</CustomText>
-                            <CustomText color="#fff">- Transparência;</CustomText> 
-                            <CustomText color="#fff">- Credibilidade; </CustomText>
-                            <CustomText color="#fff">- Competência; </CustomText>
-                            <CustomText color="#fff">- Integridade; </CustomText>
-                            <CustomText color="#fff">- Seriedade; </CustomText>
-                            <CustomText color="#fff">- Respeito às diferenças; </CustomText>
-                            <CustomText color="#fff">- Temor a Deus.</CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Ética;</CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Transparência;</CustomText> 
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Credibilidade; </CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Competência; </CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Integridade; </CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Seriedade; </CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Respeito às diferenças; </CustomText>
+                            <CustomText color="#fff" fontSize={handleFontSize}>- Temor a Deus.</CustomText>
                         </LabeledText>
                     </LabeledContainer>
                 </Flex>
@@ -176,7 +178,7 @@ const History = () => {
                                 <CustomText color="#fff">Geral</CustomText>
                             </GeneralGoalTitle>
                             <GeneralGoalText>
-                                <CustomText color="#fff" fontSize="12px">
+                                <CustomText color="#fff" fontSize={handleFontSize}>
                                     Fornecer atendimento assistencial, psicológico e educacional às crianças, 
                                     adolescentes e adultos, bem como aos seus familiares, que resulte para estes uma melhor 
                                     qualidade de vida.
@@ -188,21 +190,21 @@ const History = () => {
                                 <CustomText color="#fff">Específicos</CustomText>
                             </SpecificGoalTitle>
                             <SpecificGoalText>
-                                <CustomText color="#fff" fontSize="12px">
+                                <CustomText color="#fff" fontSize={handleFontSize}>
                                     Desenvolver e executar um planejamento pedagógico e psicológico que estimule a reflexão,
                                     autonomia, exercício da cidadania e consciência da realidade de cada cliente.
                                 </CustomText>
-                                <CustomText color="#fff" fontSize="12px">
+                                <CustomText color="#fff" fontSize={handleFontSize}>
                                     Suprir as crianças, adolescentes e adultos em suas necessidades físicas e emocionais, 
                                     como: alimentação, higiene, solidariedade, atenção, simpatia, amabilidade, estimulação psicomotora e outros;
                                 </CustomText>
 
-                                <CustomText color="#fff" fontSize="12px">
+                                <CustomText color="#fff" fontSize={handleFontSize}>
                                     Criar estratégias de ensino que sejam capazes de respeitar cada usuário nas suas 
                                     dificuldades, explorando suas potencialidades;
                                 </CustomText>
 
-                                <CustomText color="#fff" fontSize="12px">
+                                <CustomText color="#fff" fontSize={handleFontSize}>
                                     Criar oportunidades aos familiares para expor e discutir suas ideias, dificuldades e 
                                     anseios a respeito de seus entes queridos.
                                 </CustomText>

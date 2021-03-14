@@ -14,6 +14,10 @@ export const TextWithImageContainer = styled.section`
     }
 
     @media(max-width: 450px) {
+        div {
+            margin: 8px;
+        }
+
         padding: 2rem 0.5rem;
     }
 `;
