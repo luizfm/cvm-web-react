@@ -5,7 +5,6 @@ import { TextWithImageContainer, TextContent, ImageContent } from './style';
 import Flex from '../Flex';
 
 const TextWithImage = ({ children, imagePath, margin, direction, rotateImage, flex }) => {
-
    return (
        <TextWithImageContainer direction={direction} >
            <Flex marginRight={margin} marginLeft={margin} justifyContent="center" alignItems="center" flex={flex}>
