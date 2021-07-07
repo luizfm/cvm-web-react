@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import { BiArrowToRight, BiMenu } from 'react-icons/bi';
 
 import logoImg from '../../assets/logo.svg';
@@ -41,16 +41,16 @@ const Header = () => {
 
             <LoginContainer>
                 <InputsContainer>
-                    <Input 
+                    <Input
                         name="email"
-                        backgroundColor="#8FE6F5" 
-                        placeholder="Email" 
+                        backgroundColor="#8FE6F5"
+                        placeholder="Email"
                         type="email"
                     />
-                    <Input 
-                        name="password" 
-                        backgroundColor="#8FE6F5" 
-                        placeholder="Senha" 
+                    <Input
+                        name="password"
+                        backgroundColor="#8FE6F5"
+                        placeholder="Senha"
                         type="password"
                     />
                 </InputsContainer>

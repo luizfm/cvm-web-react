@@ -9,6 +9,7 @@ export const Container = styled.div`
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     div {
@@ -78,7 +79,7 @@ export const Content = styled.div`
 
 export const LogoImageContainer = styled.div`
     height: 50%;
-    
+
     img {
         height: 200px;
     }
@@ -86,7 +87,7 @@ export const LogoImageContainer = styled.div`
 
 export const KidsImageContainer = styled.img`
     height: 370px;
-    margin-top: 60px;   
+    margin-top: 60px;
     margin-left: 100px;
 
     @media(max-width: 940px) {

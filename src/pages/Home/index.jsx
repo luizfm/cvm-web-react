@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import Lottie from 'react-lottie';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import { FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
 import { IoDocumentOutline } from 'react-icons/io5';
 
@@ -9,12 +9,12 @@ import socialMediaData from '../../utils/animation/socialMedia.json';
 import financialData from '../../utils/animation/financial.json';
 import volunteerImageCall from '../../assets/volunteercall.svg';
 
-import { 
-    HomeContainer, 
-    HeroSection, 
-    NoticeSection, 
-    SocialMediaSection, 
-    LawInformationSection, 
+import {
+    HomeContainer,
+    HeroSection,
+    NoticeSection,
+    SocialMediaSection,
+    LawInformationSection,
     ImageContainer,
     NoticeContainer,
     NoticeDatesContainer,
@@ -46,7 +46,7 @@ const Home = () => {
             }
         }
     }, []);
-    
+
     return (
         <HomeContainer>
             <HeroSection>
@@ -61,14 +61,14 @@ const Home = () => {
                 </h2>
 
                 <NoticeContainer>
-                    <Lottie 
+                    <Lottie
                         options={defaultOptions(messageData)}
                         height={100}
                         width={100}
                         isStopped={animationState.isStopped}
                         isPaused={animationState.isPaused}
                     />
-                    
+
                     <NoticeDatesContainer>
                         <div>
                             <p>05/03</p>
@@ -124,7 +124,7 @@ const Home = () => {
                                 <p>Acesse nossa página no Facebook e fique por dentro das novidades</p>
                             </div>
                         </MediaLink>
-                            
+
                         <MediaLink>
                             <a href="/">
                                 <FiInstagram size={36} color="#fff" />
@@ -134,7 +134,7 @@ const Home = () => {
                                 <p>Em nosso instragam você acompanha o dia a dia da CVM</p>
                             </div>
                         </MediaLink>
-                            
+
                         <MediaLink>
                             <a href="/">
                                 <FiTwitter size={36} color="#fff"/>
@@ -160,7 +160,7 @@ const Home = () => {
                         <h3>Prestação de contas</h3>
 
                         <h5>Relatório anual e balanço patrimonial</h5>
-                        
+
                         <Separator backgroundColor="#12AFCB" height="2px" borderRadius="12px"/>
 
                         <LawDownloads>
