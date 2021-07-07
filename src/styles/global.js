@@ -26,7 +26,7 @@ export default createGlobalStyle`
     }
 
     body, input, button {
-        font: 400 1rem 'Fredoka One', sans-serif;
+        font: 400 1rem 'Poppins', sans-serif;
     }
 
     button {
