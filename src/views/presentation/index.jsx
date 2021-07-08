@@ -1,0 +1,33 @@
+import React from 'react';
+
+import logoImg from '../../assets/logo.svg';
+import kids from '../../assets/kids.svg';
+import Button, { BUTTON_SIZES, BUTTON_THEMES } from '../../components/button'
+
+import styles from './styles.module.scss'
+
+const Presentation = () => {
+    return (
+        <div className={styles.container}>
+            <section className={styles.content}>
+                <img className={styles.logo} src={logoImg} alt="CVM Logo"/>
+
+                <h1 className={styles.introduction}>A CVM ajuda a comunidade com seus serviços de creche e orfanato</h1>
+
+                <img className={styles.kids} src={kids} alt="Kids" />
+
+                <Button
+                    className={styles['nav-button']}
+                    id="navigate-home-button"
+                    to="/home"
+                    size={BUTTON_SIZES.LARGE}
+                    theme={BUTTON_THEMES.SECONDARY}
+                >
+                    Ir para o site
+                </Button>
+            </section>
+        </div>
+    )
+}
+
+export default Presentation;

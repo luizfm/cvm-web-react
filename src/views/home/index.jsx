@@ -26,7 +26,7 @@ import {
     LawDownloads
 } from './style';
 import Separator from '../../components/Separator';
-import Flex from '../../components/Flex/Flex';
+import Flex from '../../components/Flex';
 import { useMediaQuery } from '../../hooks/mediaQuery';
 
 const Home = () => {

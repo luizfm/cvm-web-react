@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './routes'
 
+import './colors.modules.css'
+
 ReactDOM.render(
   <React.StrictMode>
     <Routes />
