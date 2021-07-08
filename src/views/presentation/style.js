@@ -3,7 +3,7 @@ import { shade } from 'polished';
 
 
 export const Container = styled.div`
-    height: 100vh;
+    min-height: 100vh;
 
     background: #12AFCB;
 
