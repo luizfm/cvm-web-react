@@ -78,6 +78,18 @@
   }
 }
 
+//maximun of 1024px
+
+@media (max-width: 1024px) {
+  .container {
+    .content {
+      .introduction {
+        font-size: 3.4rem;
+      }
+    }
+  }
+}
+
 // maximum of 940px
 
 @media (max-width: 940px) {
@@ -126,6 +138,38 @@
 
     .bottom {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      padding: 3.2rem;
+      height: 30rem;
+
+      .logo {
+        height: 15rem;
+      }
+
+      .introduction {
+        font-size: 2rem;
+        padding: 0;
+      }
+    }
+
+    .aside {
+      .kids {
+        height: 22rem;
+        width: 32rem;
+      }
+
+      .mobile-button {
+        margin-bottom: 3.2rem;
+      }
     }
   }
 }
