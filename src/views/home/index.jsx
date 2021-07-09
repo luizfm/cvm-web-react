@@ -25,8 +25,6 @@ import {
     LawLinks,
     LawDownloads
 } from './style';
-import Separator from '../../components/Separator';
-import Flex from '../../components/Flex';
 import { useMediaQuery } from '../../hooks/mediaQuery';
 
 const Home = () => {
@@ -148,9 +146,7 @@ const Home = () => {
                 </SocialMediaContainer>
             </SocialMediaSection>
 
-            <Flex padding="6rem">
-                <Separator backgroundColor="#F3C888" height="2px" borderRadius="12px"/>
-            </Flex>
+
 
             <LawInformationSection>
                 <h2>Informações legais e transparência</h2>
@@ -160,8 +156,6 @@ const Home = () => {
                         <h3>Prestação de contas</h3>
 
                         <h5>Relatório anual e balanço patrimonial</h5>
-
-                        <Separator backgroundColor="#12AFCB" height="2px" borderRadius="12px"/>
 
                         <LawDownloads>
                             <a href="/">

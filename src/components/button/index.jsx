@@ -17,7 +17,7 @@ export const BUTTON_SIZES = {
 }
 
 
-const Button = ({ to, children, onClick, icon, type, disabled, size, theme, className, ...restOfProps }) => {
+const Button = ({ to, children, onClick, type, disabled, size, theme, className, ...restOfProps }) => {
 
   const buttonStyles = useMemo(
     () =>
@@ -26,14 +26,9 @@ const Button = ({ to, children, onClick, icon, type, disabled, size, theme, clas
 
   const buttonContent = useMemo(() => (
     <>
-      {icon && (
-        <svg aria-hidden="true" viewBox={icon.viewBox} className={buttonStyles}>
-          <use xlinkHref={`#${icon.id}`} />
-        </svg>
-      )}
       {children}
     </>
-  ), [buttonStyles, children, icon])
+  ), [children])
 
   if(to) {
     return (
@@ -48,7 +43,7 @@ const Button = ({ to, children, onClick, icon, type, disabled, size, theme, clas
       onClick={onClick}
       type={type}
       disabled={disabled}
-      className={styles.button}
+      className={buttonStyles}
       {...restOfProps}
     >
       {buttonContent}
@@ -58,8 +53,8 @@ const Button = ({ to, children, onClick, icon, type, disabled, size, theme, clas
 
 Button.propTypes = {
   to: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(BUTTON_THEMES)),
-  theme: PropTypes.oneOf(Object.values(BUTTON_SIZES)),
+  size: PropTypes.oneOf(Object.values(BUTTON_SIZES)),
+  theme: PropTypes.oneOf(Object.values(BUTTON_THEMES)),
   className: PropTypes.string,
   disabled: PropTypes.bool,
   type: PropTypes.string,
