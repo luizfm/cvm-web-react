@@ -1,0 +1,28 @@
+.footer {
+  background-color: var(--primary);
+  display: grid;
+  grid-template: 1fr auto / 1fr 1fr 1fr;
+  row-gap: 1.6rem;
+  grid-template-areas: 'general help contact' 'copyright copyright copyright';
+  padding: 3.2rem;
+
+  .general {
+    grid-area: general;
+  }
+
+  .help {
+    grid-area: help;
+  }
+
+  .contact {
+    grid-area: contact;
+  }
+
+  .copyright {
+    grid-area: copyright;
+    text-align: center;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+  }
+}
