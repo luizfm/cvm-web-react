@@ -26,3 +26,12 @@
     font-weight: bold;
   }
 }
+
+// maximum of 680px
+
+@media (max-width: 680px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
