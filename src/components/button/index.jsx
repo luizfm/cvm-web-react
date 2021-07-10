@@ -7,7 +7,8 @@ import styles from './styles.module.scss'
 
 export const BUTTON_THEMES = {
   PRIMARY: 'primary',
-  SECONDARY: 'secondary'
+  SECONDARY: 'secondary',
+  GREEN: 'green'
 }
 
 export const BUTTON_SIZES = {

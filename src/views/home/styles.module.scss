@@ -1,0 +1,241 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero-image {
+    margin: 8rem auto;
+  }
+
+  .news-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green-background);
+    width: 100%;
+    color: white;
+    padding: 4rem 3.2rem 0 3.2rem;
+
+    .frame {
+      border-top-right-radius: 1.6rem;
+      border-top-left-radius: 1.6rem;
+      border: 0.4rem solid white;
+      border-bottom: none;
+      padding: 3.2rem;
+
+      .news-container {
+        margin-top: 4rem;
+
+        .notice-item {
+          margin-bottom: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .social-media-section {
+    padding: 4rem 0;
+    display: grid;
+    grid-template: auto 1fr / 1fr 1fr;
+    grid-template-areas: 'title title' 'lottie social-medias';
+    row-gap: 4rem;
+    column-gap: 4rem;
+    border-bottom: 0.2rem solid orange;
+
+    &-title {
+      grid-area: title;
+      justify-self: center;
+    }
+
+    &-lottie {
+      grid-area: lottie;
+      justify-self: center;
+    }
+
+    &-links {
+      grid-area: social-medias;
+      align-self: center;
+
+      .link-item {
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+
+  .financial-section {
+    padding: 4rem 0;
+    display: grid;
+    grid-template: auto 1fr / 1fr 1fr;
+    column-gap: 4rem;
+    grid-template-areas: 'title title' 'financial-box lottie';
+
+    &-title {
+      margin-bottom: 4rem;
+      grid-area: title;
+      justify-self: center;
+    }
+
+    .reports-box {
+      grid-area: financial-box;
+      background: var(--gray-8);
+      border-radius: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .description {
+        border-bottom: 0.1rem solid var(--primary);
+      }
+
+      .financial-buttons {
+        width: 20rem;
+        display: flex;
+        column-gap: 0.8rem;
+      }
+    }
+
+    &-lottie {
+      grid-area: lottie;
+    }
+  }
+}
+
+// maximum of 1024px;
+
+@media (max-width: 1024px) {
+  .container {
+    .hero-image {
+      .image {
+        width: 60rem;
+      }
+    }
+  }
+}
+
+// maximum of 840px
+
+@media (max-width: 840px) {
+  .container {
+    .news-section {
+      .frame {
+        padding: 3.2rem;
+
+        .news-container {
+          .notice-item {
+            font-size: 1.2rem;
+            width: 32rem;
+          }
+        }
+      }
+    }
+
+    .social-media-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .financial-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .reports-box {
+        padding: 3.2rem;
+
+        .financial-buttons {
+          margin: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+// DISPLAY NONE MOBILE BUTTON OVER 601px
+@media (min-width: 601px) {
+  .container {
+    .social-media-section {
+      .mobile-media-buttons {
+        display: none;
+      }
+    }
+  }
+}
+
+//maximum of 600px
+@media (max-width: 600px) {
+  .container {
+    .hero-image {
+      .image {
+        width: 32rem;
+      }
+    }
+
+    .news-section {
+      .frame {
+        padding: 3.2rem;
+
+        .news-container {
+          .notice-item {
+            font-size: 1rem;
+            width: 30rem;
+          }
+        }
+      }
+    }
+
+    .social-media-section {
+      &-links {
+        display: none;
+      }
+
+      .mobile-media-buttons {
+        display: flex;
+        column-gap: 2.4rem;
+
+        .link-item {
+          height: 5.2rem;
+          width: 5.2rem;
+        }
+      }
+    }
+
+    .financial-section {
+      &-title {
+        text-align: center;
+      }
+
+      .reports-box {
+        text-align: center;
+      }
+
+      &-lottie {
+        display: none;
+      }
+    }
+  }
+}
+
+//maximum of 380px
+
+@media (max-width: 380px) {
+  .container {
+    .news-section {
+      .frame {
+        padding: 3.2rem;
+
+        .news-container {
+          .notice-item {
+            font-size: 1rem;
+            width: 21rem;
+          }
+        }
+      }
+    }
+  }
+}

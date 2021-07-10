@@ -1,0 +1,31 @@
+.notice-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.6rem;
+
+  .notice-date {
+    color: white;
+    font-weight: bold;
+  }
+
+  .notice-button {
+    padding: 3.2rem;
+    height: 5.7rem;
+    width: 52rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .notice-container {
+    .notice-date {
+      display: none;
+    }
+
+    .notice-button {
+      width: 24rem;
+    }
+  }
+}
