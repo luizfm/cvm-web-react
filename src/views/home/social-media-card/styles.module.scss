@@ -1,0 +1,20 @@
+.social-media-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  .icon-container {
+    background-color: orange;
+    padding: 0.6rem 0.6rem 0 0.6rem;
+    border-radius: 0.8rem;
+    align-self: center;
+  }
+
+  .news-box {
+    margin-left: 3.2rem;
+    background-color: var(--gray-8);
+    padding: 3.2rem;
+    text-align: center;
+    border-radius: 0.8rem;
+    max-width: 45rem;
+  }
+}

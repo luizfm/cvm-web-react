@@ -13,23 +13,23 @@ import styles from './styles.module.scss'
 const navItems = [
   {
     label: 'A Cvm',
-    path: '/home'
+    path: '/site/home'
   },
   {
     label: 'Educação Infatil',
-    path: '/educacao-infantil'
+    path: '/site/educacao-infantil'
   },
   {
     label: 'Acolhimento institucional',
-    path: '/acolhimento-institucional'
+    path: '/site/acolhimento-institucional'
   },
   {
     label: 'Projetos',
-    path: '/projetos'
+    path: '/site/projetos'
   },
   {
     label: 'Ajude',
-    path: '/ajude'
+    path: '/site/ajude'
   }
 ]
 

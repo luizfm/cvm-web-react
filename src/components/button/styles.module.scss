@@ -29,6 +29,16 @@
   }
 }
 
+.green {
+  background-color: var(--green);
+  color: var(--gray-100);
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: var(--gray-4);
+  }
+}
+
 .small {
   height: 2.4rem;
 }
