@@ -11,7 +11,7 @@
     position: absolute;
     width: 10rem;
     height: 15rem;
-    left: 0.8rem;
+    // left: 0.8rem;
     top: -1rem;
   }
 
@@ -25,7 +25,12 @@
 
     .link {
       font-size: 1.6rem;
+      text-align: center;
     }
+  }
+
+  .menu-button {
+    display: none;
   }
 
   .login-container {
@@ -41,6 +46,90 @@
       .login-icon {
         height: 2rem;
       }
+    }
+  }
+}
+
+@media (max-width: 1060px) {
+  .header {
+    padding: 1.5rem;
+
+    .nav-container {
+      .link {
+        text-align: center;
+      }
+    }
+
+    .menu-button {
+      display: none;
+    }
+
+    .login-container {
+      display: grid;
+      grid-template: 1fr 1fr / 1fr auto;
+      grid-template-areas: 'email button' 'password button';
+
+      .button {
+        grid-area: button;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .header {
+    align-items: center;
+
+    .logo {
+      position: absolute;
+      width: 10rem;
+      height: 15rem;
+      right: 0.8rem;
+      top: -1rem;
+    }
+
+    .nav-container {
+      display: none;
+    }
+
+    .menu-button {
+      display: inline;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background-color: var(--primary);
+      overflow: hidden;
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .close-button {
+        position: absolute;
+        top: 0.8rem;
+        right: 0.8rem;
+
+        .close-icon {
+          fill: white;
+          color: white;
+        }
+      }
+
+      .nav-mobile-container {
+        padding: 1.6rem;
+
+        .mobile-link {
+          font-size: 2.4rem;
+          height: auto;
+          text-align: center;
+        }
+      }
+    }
+
+    .login-container {
+      display: none;
     }
   }
 }

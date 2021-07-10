@@ -7,7 +7,7 @@ import Button, { BUTTON_SIZES, BUTTON_THEMES } from '../../components/button'
 import styles from './styles.module.scss'
 import classNames from 'classnames';
 
-const Presentation = () => {
+const WelcomePage = () => {
     return (
         <div className={styles.container}>
             <section className={styles.content}>
@@ -18,7 +18,7 @@ const Presentation = () => {
                 <Button
                     className={styles['nav-button']}
                     id="navigate-home-button"
-                    to="/home"
+                    to="/site/home"
                     size={BUTTON_SIZES.LARGE}
                     theme={BUTTON_THEMES.SECONDARY}
                 >
@@ -31,7 +31,7 @@ const Presentation = () => {
                 <Button
                     className={styles['mobile-button']}
                     id="navigate-home-button"
-                    to="/home"
+                    to="/site/home"
                     size={BUTTON_SIZES.LARGE}
                     theme={BUTTON_THEMES.PRIMARY}
                 >
@@ -45,4 +45,4 @@ const Presentation = () => {
     )
 }
 
-export default Presentation;
+export default WelcomePage;
