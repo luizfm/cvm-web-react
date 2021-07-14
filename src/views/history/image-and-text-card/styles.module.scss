@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'first second';
+  padding: 3.2rem 0;
+
+  .inline-input {
+    grid-area: first;
+    height: 35rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .image {
+    grid-area: second;
+    justify-self: center;
+    width: 45rem;
+    height: 35rem;
+    object-fit: cover;
+    border-radius: 1.6rem;
+  }
+
+  &.reverse {
+    .inline-input {
+      grid-area: second;
+      height: 35rem;
+    }
+
+    .image {
+      grid-area: first;
+      justify-self: center;
+      width: 45rem;
+      height: 35rem;
+      object-fit: cover;
+      border-radius: 1.6rem;
+    }
+  }
+}

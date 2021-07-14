@@ -6,6 +6,7 @@ import GlobalStyles from '../styles/global';
 import WelcomePage from '../views/welcome-page';
 import App from '../App'
 import Home from '../views/home'
+import History from '../views/history'
 
 const Routes = () => {
     return (
@@ -15,6 +16,7 @@ const Routes = () => {
                 <WelcomePage default path="/"/>
                 <App path="/site">
                     <Home path="/home" />
+                    <History path="/cvm" />
                 </App>
             </ReachRouter>
         </>

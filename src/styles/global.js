@@ -29,7 +29,7 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    body, input, button {
+    body, input, textarea, button {
         font: 400 1.6rem 'Poppins', sans-serif;
     }
 
