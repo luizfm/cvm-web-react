@@ -90,7 +90,7 @@ const History = () => {
             text: CVM_OBJECTIVES.SPECIFIC.TEXT,
             className: styles['specific-goals']
         }
-    ])
+    ], [])
 
     return (
         <div className={styles.container}>
