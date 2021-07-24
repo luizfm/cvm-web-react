@@ -1,0 +1,62 @@
+.container {
+  .child-education-section {
+    padding: 3.2rem 6rem;
+    text-align: center;
+    background-color: var(--green);
+
+    &-title {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  .our-space-and-info-section {
+    padding: 8rem 6rem;
+    text-align: center;
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr 1fr;
+    grid-template-areas: 'title title' 'first-text first-text' 'second-text second-text' 'third-text fourth-text';
+
+    &-title {
+      grid-area: title;
+    }
+
+    .text-container-0 {
+      grid-area: first-text;
+      padding-top: 3.2rem;
+    }
+    .text-container-1 {
+      grid-area: second-text;
+      padding: 3.2rem 0;
+    }
+    .text-container-2 {
+      grid-area: third-text;
+      padding: 4rem 2rem;
+      border-right: 0.1rem solid var(--gray-8);
+    }
+    .text-container-3 {
+      grid-area: fourth-text;
+      padding: 4rem 2rem;
+    }
+  }
+
+  .downloads-section {
+    text-align: center;
+    padding: 3.2rem 6rem 10rem;
+    border-top: 0.1rem solid black;
+    max-width: 100rem;
+    margin: 0 auto;
+
+    .buttons-container {
+      margin-top: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 1.6rem;
+
+      .button {
+        height: 7.8rem;
+        width: 30rem;
+      }
+    }
+  }
+}
