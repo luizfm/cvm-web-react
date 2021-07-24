@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.2rem;
+    word-break: break-word;
 
     .label {
       font-size: 1.4rem;
@@ -32,6 +33,15 @@
       &:focus {
         outline: 0.1rem solid var(--gray-24);
       }
+    }
+
+    .textarea {
+      display: block;
+      overflow: hidden;
+      resize: horizontal;
+      min-height: 4rem;
+      line-height: 2.4rem;
+      text-align: justify;
     }
   }
 

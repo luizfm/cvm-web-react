@@ -6,7 +6,6 @@
 
   .inline-input {
     grid-area: first;
-    height: 35rem;
     font-size: 1.4rem;
     line-height: 2rem;
   }
@@ -23,7 +22,6 @@
   &.reverse {
     .inline-input {
       grid-area: second;
-      height: 35rem;
     }
 
     .image {
@@ -33,6 +31,64 @@
       height: 35rem;
       object-fit: cover;
       border-radius: 1.6rem;
+    }
+  }
+}
+
+// maximum of 1024px
+
+@media (max-width: 1024px) {
+  .container {
+    .image {
+      width: 32rem;
+    }
+
+    &.reverse {
+      .image {
+        width: 32rem;
+      }
+    }
+  }
+}
+
+// maximum of 780px
+
+@media (max-width: 780px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .inline-input {
+      margin-bottom: 3.2rem;
+    }
+
+    .image {
+      align-self: center;
+    }
+
+    &.reverse {
+      .inline-input {
+        min-height: 0;
+        overflow-y: visible;
+      }
+
+      .image {
+        align-self: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    .image {
+      border-radius: 0;
+    }
+
+    &.reverse {
+      .image {
+        border-radius: 0;
+      }
     }
   }
 }

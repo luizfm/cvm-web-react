@@ -66,10 +66,20 @@ const InlineEdit = ({
 
   const inputElement = useMemo(() =>
     isMultiline ? (
-      <textarea {...inputProperties} {...inputProps} />
+      <p>
+        <span
+          role="textbox"
+          contentEditable
+          {...inputProperties}
+          {...inputProps}
+          className={classnames(styles.textarea, inputProperties.className)}
+          >
+            {inputValue}
+          </span>
+      </p>
     ) : (
       <input {...inputProperties} {...inputProps} />
-    ), [inputProperties, inputProps, isMultiline])
+    ), [inputProperties, inputProps, inputValue, isMultiline])
 
   return (
     <div className={classnames(styles['inline-edit-container'], className)}>

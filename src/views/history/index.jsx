@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
+import classnames from 'classnames'
 import Lottie from 'react-lottie';
 
 import CvmBuildingImage from '../../assets/images/cvm-building.jpg'
@@ -65,15 +66,18 @@ const History = () => {
     const identityItems = useMemo(() => [
         {
             title: "Visão",
-            text: CVM_IDENTITY.VISION.TEXT
+            text: CVM_IDENTITY.VISION.TEXT,
+            className: styles.vision
         },
         {
             title: 'MISSÃO',
             text: CVM_IDENTITY.MISSION.TEXT,
+            className: styles.mission
         },
         {
             title: 'Valores',
             text: CVM_IDENTITY.VALUES.TEXT,
+            className: styles.values
         }
     ], [])
 
@@ -110,12 +114,12 @@ const History = () => {
             </section>
 
             <section className={styles['our-mission-section']}>
-                <h1>Da nossa identidade</h1>
+                <h1 className={styles['our-mission-section-title']}>Da nossa identidade</h1>
 
                 {identityItems.map(item => (
-                    <div key={item.title}>
-                        <p>{item.title}</p>
-                        <p>{item.text}</p>
+                    <div key={item.title} className={classnames(styles['identity-wrapper'], item.className)}>
+                        <strong className={styles.title}>{item.title}</strong>
+                        <p className={styles.text}>{item.text}</p>
                     </div>
                 ))}
 
@@ -130,7 +134,14 @@ const History = () => {
             </section>
 
             <section className={styles['our-goals-section']}>
-                <h1>Dos nossos objetivos</h1>
+                <h1 className={styles['our-goals-section-title']}>Dos nossos objetivos</h1>
+
+                {goalsItems.map(item => (
+                    <div key={item.title} className={item.className}>
+                        <strong className={styles.title}>{item.title}</strong>
+                        <p className={styles.text}>{item.text}</p>
+                    </div>
+                ))}
 
                 <div className={styles['our-goals-section-lottie']}>
                     <Lottie
