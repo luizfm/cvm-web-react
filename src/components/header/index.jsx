@@ -13,7 +13,7 @@ import styles from './styles.module.scss'
 const navItems = [
   {
     label: 'A Cvm',
-    path: '/site/home'
+    path: '/site/cvm'
   },
   {
     label: 'Educação Infatil',

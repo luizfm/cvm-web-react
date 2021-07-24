@@ -1,0 +1,156 @@
+.container {
+  .about-us-section {
+    padding: 4rem;
+    text-align: center;
+  }
+
+  .our-mission-section {
+    background-color: var(--secondary);
+    display: grid;
+    padding: 8rem;
+    grid-template: auto 1fr auto / repeat(3, 1fr);
+    grid-template-areas: 'title title title' 'vision mission values' 'lottie lottie lottie';
+    column-gap: 4rem;
+    row-gap: 8rem;
+
+    &-title {
+      margin-top: 3.2rem;
+      grid-area: title;
+      justify-self: center;
+      color: white;
+    }
+
+    .identity-wrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: justify;
+    }
+
+    .vision {
+      grid-area: vision;
+    }
+
+    .mission {
+      grid-area: mission;
+    }
+
+    .values {
+      grid-area: values;
+    }
+
+    &-lottie {
+      grid-area: lottie;
+    }
+  }
+
+  .our-goals-section {
+    background-color: var(--secondary);
+    display: grid;
+    grid-template: 1fr repeat(2, auto) / 1fr auto;
+    grid-template-areas: 'title title' 'general lottie' 'specific lottie';
+    padding: 0 8rem 8rem 8rem;
+
+    &-title {
+      margin: 3.2rem 0;
+      grid-area: title;
+      justify-self: center;
+      color: white;
+    }
+
+    .general-goals {
+      grid-area: general;
+      display: grid;
+      grid-template-columns: 15rem 1fr;
+
+      .title {
+        padding: 3.2rem;
+        border-bottom: 0.1rem solid white;
+        border-right: 0.1rem solid white;
+      }
+
+      .text {
+        padding: 3.2rem;
+        border-bottom: 0.1rem solid white;
+        text-align: justify;
+      }
+    }
+
+    .specific-goals {
+      grid-area: specific;
+      display: grid;
+      grid-template-columns: 15rem 1fr;
+
+      .title {
+        padding: 3.2rem;
+        border-right: 0.1rem solid white;
+      }
+
+      .text {
+        padding: 3.2rem;
+        text-align: justify;
+      }
+    }
+
+    &-lottie {
+      grid-area: lottie;
+    }
+  }
+}
+
+.title,
+.text {
+  color: white;
+}
+
+// maximum of 780px
+
+@media (max-width: 780px) {
+  .container {
+    .about-us-section {
+      padding: 4rem;
+      text-align: center;
+    }
+
+    .our-mission-section {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .our-goals-section {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    .our-mission-section {
+      padding: 3.2rem;
+    }
+
+    .our-goals-section {
+      padding: 3.2rem;
+      .general-goals {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          border: none;
+        }
+      }
+
+      .specific-goals {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          border: none;
+        }
+      }
+    }
+  }
+}

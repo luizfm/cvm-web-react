@@ -1,0 +1,64 @@
+.inline-edit-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    word-break: break-word;
+
+    .label {
+      font-size: 1.4rem;
+      color: var(--gray-64);
+    }
+
+    .hidden-label {
+      position: absolute;
+      left: -10000rem;
+      top: auto;
+      width: 0.1rem;
+      height: 0.1rem;
+      overflow: hidden;
+    }
+
+    .input {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      outline: none;
+      resize: none;
+      text-align: justify;
+
+      &:focus {
+        outline: 0.1rem solid var(--gray-24);
+      }
+    }
+
+    .textarea {
+      display: block;
+      overflow: hidden;
+      resize: horizontal;
+      min-height: 4rem;
+      line-height: 2.4rem;
+      text-align: justify;
+    }
+  }
+
+  .buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 7.1rem;
+    grid-template-areas: 'cancel save';
+    column-gap: 0.8rem;
+
+    .cancel-button {
+      grid-area: cancel;
+      width: 7.1rem;
+      justify-self: right;
+    }
+
+    .save-button {
+      grid-area: save;
+    }
+  }
+}

@@ -1,38 +1,23 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import classnames from 'classnames'
 import Lottie from 'react-lottie';
 
-import cvmBuildingImage from '../../assets/cvmbuilding.jpg';
+import CvmBuildingImage from '../../assets/images/cvm-building.jpg'
+import { CVM_IDENTITY, CVM_OBJECTIVES, MOCK_HISTORY } from '../../constants/cvm-helper'
 import dinosaurData from '../../utils/animation/dinosaurData.json';
 import heroData from '../../utils/animation/hero.json';
-import kidsImage from '../../assets/fantasykids.jpg';
-import studentsImage from '../../assets/students.png';
-import CustomText from '../../components/CustomText';
-import Flex from '../../components/Flex';
-import Separator from '../../components/Separator';
-import LabeledText from '../../components/LabeledText';
-import TextWithImage from '../../components/TextWithImage';
+import KidsImage from '../../assets/images/fantasy-kids.jpg';
+import StudentsImage from '../../assets/images/students.png';
 import { useMediaQuery } from '../../hooks/mediaQuery';
 
-import { 
-    HistoryContainer,
-    AboutUsContainer, 
-    IdentityContainer, 
-    LabeledContainer, 
-    GoalsContainer,
-    GoalsContent,
-    Goals,
-    GeneralGoals,
-    SpecificGoals,
-    GeneralGoalTitle,
-    GeneralGoalText,
-    SpecificGoalTitle,
-    SpecificGoalText
-} from './style';
+import styles from './styles.module.scss'
+
+import ImageAndTextCard from './image-and-text-card';
 
 
 const History = () => {
     const hasMediaMatch = useMediaQuery('(min-width: 500px)');
-    
+
     const [animationState] = useState({
         isStopped: false, isPaused: false
     });
@@ -48,186 +33,128 @@ const History = () => {
         }
     }, []);
 
-    const handleFontSize = hasMediaMatch ? "16px" : "12px";
+    const pageHistoryItems = useMemo(() => [
+        {
+            name: "beginHistory",
+            id: "begin-history-textarea",
+            label: 'Inicio da história',
+            image: CvmBuildingImage,
+            imageLabel: 'CVM building',
+            value: MOCK_HISTORY.BEGIN.text
+        },
+        {
+            name: "mediumHistory",
+            id: "medium-history-textarea",
+            label: 'Meio da história',
+            image: KidsImage,
+            imageLabel: 'CVM kids',
+            value: MOCK_HISTORY.MEDIUM.text,
+            reverse: true,
+        },
+        {
+            name: "endHistory",
+            id: "end-history-textarea",
+            label: 'Final da história',
+            image: StudentsImage,
+            imageLabel: 'CVM students',
+            value: MOCK_HISTORY.END.text
+        },
+    ], [])
+
+    const identityItems = useMemo(() => [
+        {
+            title: "Visão",
+            text: CVM_IDENTITY.VISION.TEXT,
+            className: styles.vision
+        },
+        {
+            title: 'MISSÃO',
+            text: CVM_IDENTITY.MISSION.TEXT,
+            className: styles.mission
+        },
+        {
+            title: 'Valores',
+            text: CVM_IDENTITY.VALUES.TEXT,
+            className: styles.values
+        }
+    ], [])
+
+    const goalsItems = useMemo(() => [
+        {
+            title: "Geral",
+            text: CVM_OBJECTIVES.GENERAL.TEXT,
+            className: styles['general-goals']
+        },
+        {
+            title: "Específicos",
+            text: CVM_OBJECTIVES.SPECIFIC.TEXT,
+            className: styles['specific-goals']
+        }
+    ], [])
 
     return (
-        <HistoryContainer>
-            <AboutUsContainer>
-                <CustomText color="#12AFCB">Entenda nossa História</CustomText>
+        <div className={styles.container}>
+            <section className={styles['about-us-section']}>
+                <h1>Entenda nossa história</h1>
 
-                <TextWithImage imagePath={cvmBuildingImage} margin="24px" rotateImage="12deg">
-                    <Flex marginBottom="24px">
-                        <CustomText fontSize={handleFontSize}>
-                            Entidade filantrópica assistencial sem fins lucrativos, declarada de utilidade pública 
-                            pelo Governo Municipal, Estadual e Federal, esta registrada no Conselho Nacional de 
-                            Assistência Social e possui Certificado de Filantropia.
-                        </CustomText>
-                    </Flex>
+                {pageHistoryItems.map(item => (
+                    <ImageAndTextCard
+                        key={item.name}
+                        name={item.name}
+                        id={item.id}
+                        label={item.label}
+                        image={item.image}
+                        imageLabel={item.imageLabel}
+                        inputValue={item.value}
+                        {...item}
+                    />
+                ))}
+            </section>
 
-                    <CustomText fontSize={handleFontSize}>
-                        Fundada em 1º de novembro de 1978 para ajudar crianças, adolescentes e adultos 
-                        abandonados e com risco social.
-                    </CustomText>
-                </TextWithImage>
+            <section className={styles['our-mission-section']}>
+                <h1 className={styles['our-mission-section-title']}>Da nossa identidade</h1>
 
-                <TextWithImage imagePath={kidsImage} margin="48px" direction="row-reverse" rotateImage="-12deg">
-                    <CustomText fontSize={handleFontSize}>
-                        Importante obra, resultado do trabalho de “Dona Jandira Jovita da Rosa” e de 
-                        “Dona Geny Julia Feijó”, evangélicas que em 1978 realizaram a missão de fundar 
-                        esta entidade.
-                    </CustomText>
+                {identityItems.map(item => (
+                    <div key={item.title} className={classnames(styles['identity-wrapper'], item.className)}>
+                        <strong className={styles.title}>{item.title}</strong>
+                        <p className={styles.text}>{item.text}</p>
+                    </div>
+                ))}
 
-                    <Flex marginBottom="24px">
-                        <CustomText fontSize={handleFontSize}>
-                        O ideal inicial de Dona Jandira e Dona Geny era iniciar o atendimento com 01 
-                        (uma) creche para crianças de 0 a 06 anos. Em julho de 1980 Dona Geny 
-                        faleceu e em junho de 1985 faleceu também Dona Jandira.
-                        </CustomText>
-                    </Flex>
-
-                    <CustomText fontSize={handleFontSize}>
-                        Em 1986, a instituição fundou o Lar Jandira Jovita da Rosa, para atender crianças 
-                        de 0 a 18 anos abandonados e/ou vitimas de maus tratos, em 1996 foi aberta a 
-                        Comunidade Terapêutica Dona Geny Julia Feijó, que no início só atendia crianças e 
-                        adolescentes, e a partir do ano de 2007 passou a atender adultos.
-                    </CustomText>
-                </TextWithImage>
-
-                <TextWithImage imagePath={studentsImage} margin="48px" flex>
-                    <CustomText fontSize={handleFontSize}>
-                        Importante obra, resultado do trabalho de “Dona Jandira Jovita da Rosa” e de 
-                        “Dona Geny Julia Feijó”, evangélicas que em 1978 realizaram a missão de fundar 
-                        esta entidade.
-                    </CustomText>
-
-                    <Flex marginBottom="24px">
-                        <CustomText fontSize={handleFontSize}>
-                        O ideal inicial de Dona Jandira e Dona Geny era iniciar o atendimento com 01 
-                        (uma) creche para crianças de 0 a 06 anos. Em julho de 1980 Dona Geny 
-                        faleceu e em junho de 1985 faleceu também Dona Jandira.
-                        </CustomText>
-                    </Flex>
-
-                    <CustomText fontSize={handleFontSize}>
-                        Em 1986, a instituição fundou o Lar Jandira Jovita da Rosa, para atender crianças 
-                        de 0 a 18 anos abandonados e/ou vitimas de maus tratos, em 1996 foi aberta a 
-                        Comunidade Terapêutica Dona Geny Julia Feijó, que no início só atendia crianças e 
-                        adolescentes, e a partir do ano de 2007 passou a atender adultos.
-                    </CustomText>
-                </TextWithImage>
-            </AboutUsContainer>
-
-            <IdentityContainer>
-                
-
-                <Flex marginBottom="32px">
-                    <CustomText color="#fff">Da nossa identidade</CustomText>
-                </Flex>
-
-                <Separator backgroundColor="#fff"/>
-
-                <Flex marginTop="24px">
-                    <LabeledContainer>
-                        <LabeledText label="Visão">
-                            Ser referência na área social, buscando aprimoramento contínuo e inovando pelas ações
-                        </LabeledText>
-
-                        <LabeledText label="Missão">
-                            Socializar o atendimento de qualidade à população de baixo poder aquisitivo, na 
-                            busca de soluções para os problemas das crianças, adolescentes e adultos excluídos, 
-                            visando à formação de mulheres e homens críticos e responsáveis, promovendo valores, 
-                            rompendo paradigmas e evangelizando-os nos ensinamentos de Jesus.
-                        </LabeledText>
-
-                        <LabeledText label="Valores">
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Ética;</CustomText>
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Transparência;</CustomText> 
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Credibilidade; </CustomText>
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Competência; </CustomText>
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Integridade; </CustomText>
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Seriedade; </CustomText>
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Respeito às diferenças; </CustomText>
-                            <CustomText color="#fff" fontSize={handleFontSize}>- Temor a Deus.</CustomText>
-                        </LabeledText>
-                    </LabeledContainer>
-                </Flex>
-
-                <div>
-                    <Lottie 
-                        style={hasMediaMatch ? styles.container : styles.containerMobile}
+                <div className={styles['our-mission-section-lottie']}>
+                    <Lottie
+                        style={hasMediaMatch ? lottieStyles.container : lottieStyles.containerMobile}
                         options={defaultOptions(heroData)}
                         isPaused={animationState.isPaused}
                         isStopped={animationState.isStopped}
                     />
                 </div>
-            </IdentityContainer>
+            </section>
 
-            <GoalsContainer>
-                
+            <section className={styles['our-goals-section']}>
+                <h1 className={styles['our-goals-section-title']}>Dos nossos objetivos</h1>
 
-                <Flex marginBottom="32px">
-                    <CustomText color="#fff">Dos nossos objetivos</CustomText>
-                </Flex>
-
-                <Separator backgroundColor="#fff"/>
-
-                <GoalsContent>
-                    <Goals>
-                        <GeneralGoals>
-                            <GeneralGoalTitle>
-                                <CustomText color="#fff">Geral</CustomText>
-                            </GeneralGoalTitle>
-                            <GeneralGoalText>
-                                <CustomText color="#fff" fontSize={handleFontSize}>
-                                    Fornecer atendimento assistencial, psicológico e educacional às crianças, 
-                                    adolescentes e adultos, bem como aos seus familiares, que resulte para estes uma melhor 
-                                    qualidade de vida.
-                                </CustomText>
-                            </GeneralGoalText>
-                        </GeneralGoals>
-                        <SpecificGoals>
-                            <SpecificGoalTitle>
-                                <CustomText color="#fff">Específicos</CustomText>
-                            </SpecificGoalTitle>
-                            <SpecificGoalText>
-                                <CustomText color="#fff" fontSize={handleFontSize}>
-                                    Desenvolver e executar um planejamento pedagógico e psicológico que estimule a reflexão,
-                                    autonomia, exercício da cidadania e consciência da realidade de cada cliente.
-                                </CustomText>
-                                <CustomText color="#fff" fontSize={handleFontSize}>
-                                    Suprir as crianças, adolescentes e adultos em suas necessidades físicas e emocionais, 
-                                    como: alimentação, higiene, solidariedade, atenção, simpatia, amabilidade, estimulação psicomotora e outros;
-                                </CustomText>
-
-                                <CustomText color="#fff" fontSize={handleFontSize}>
-                                    Criar estratégias de ensino que sejam capazes de respeitar cada usuário nas suas 
-                                    dificuldades, explorando suas potencialidades;
-                                </CustomText>
-
-                                <CustomText color="#fff" fontSize={handleFontSize}>
-                                    Criar oportunidades aos familiares para expor e discutir suas ideias, dificuldades e 
-                                    anseios a respeito de seus entes queridos.
-                                </CustomText>
-                            </SpecificGoalText>
-                        </SpecificGoals>
-                    </Goals>
-
-                    <div>
-                        <Lottie 
-                            style={hasMediaMatch ? styles.container : styles.containerMobile}
-                            options={defaultOptions(dinosaurData)}
-                            isPaused={animationState.isPaused}
-                            isStopped={animationState.isStopped}
-                        />
+                {goalsItems.map(item => (
+                    <div key={item.title} className={item.className}>
+                        <strong className={styles.title}>{item.title}</strong>
+                        <p className={styles.text}>{item.text}</p>
                     </div>
-                </GoalsContent>
+                ))}
 
-            </GoalsContainer>
-        </HistoryContainer>
+                <div className={styles['our-goals-section-lottie']}>
+                    <Lottie
+                        style={hasMediaMatch ? lottieStyles.container : lottieStyles.containerMobile}
+                        options={defaultOptions(dinosaurData)}
+                        isPaused={animationState.isPaused}
+                        isStopped={animationState.isStopped}
+                    />
+                </div>
+            </section>
+        </div>
     )
 }
 
-const styles = {
+const lottieStyles = {
     containerMobile: {
         width: 270,
         height: 270,
