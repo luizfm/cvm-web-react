@@ -33,8 +33,6 @@ const History = () => {
         }
     }, []);
 
-    const handleFontSize = hasMediaMatch ? "16px" : "12px";
-
     const pageHistoryItems = useMemo(() => [
         {
             name: "beginHistory",
