@@ -1,3 +1,13 @@
+import EnergySaveAnimation from '../utils/animation/energy-save.json'
+import SmartPhoneAnimation from '../utils/animation/smartphone.json'
+import VolunteersAnimation from '../utils/animation/volunteers.json'
+import PagSeguroAnimation from '../utils/animation/pagseguro.json'
+import MensalPaymentAnimation from '../utils/animation/mensal-payment.json'
+import DonationAnimation from '../utils/animation/donation.json'
+import ChristAnimation from '../utils/animation/christ.json'
+import MegaphoneAnimation from '../utils/animation/megaphone.json'
+import BankAnimation from '../utils/animation/bank.json'
+
 export const MOCK_HISTORY = {
   BEGIN: {
     text: `A CVM – Vinde a Mim as Criancinhas tem desde o início da sua história os princípios de amor, fé e solidariedade.
@@ -60,26 +70,82 @@ export const OUR_SPACE_TEXT = [
 export const PROJECTS = [
   {
     title: 'CEI: CENTRO EDUCACIONAL INFANTIL',
-    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmoLorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
   },
   {
     title: 'CDE: CENTRO DE DESENVOLVIMENTO ESPORTIVO',
-    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmoLorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
   },
   {
     title: 'CDC: CENTRO DE DESENVOLVIMENTO CULTURAL',
-    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmoLorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
   },
   {
     title: 'CAS: CENTRO DE ATENDIMENTO SOCIAL',
-    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmoLorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
   },
   {
     title: 'EDUCAÇÃO AMBIENTAL',
-    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmoLorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
   },
   {
     title: 'SEGURANÇA ALIMENTAR',
-    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmoLorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
   },
 ]
+
+export const HELP_METHODS = {
+  ELETRIC_ENERGY: {
+    SLUG: 'ELETRIC_ENERGY',
+    TITLE: 'Energia elétrica',
+    ANIMATION: EnergySaveAnimation
+  },
+  TELEPHONE_BILL: {
+    SLUG: 'TELEPHONE_BILL',
+    TITLE: 'Conta de telefone Oi',
+    ANIMATION: SmartPhoneAnimation,
+  },
+  VOLUNTEER: {
+    SLUG: 'VOLUNTEER',
+    TITLE: 'Voluntariado',
+    ANIMATION: VolunteersAnimation,
+  },
+  PAG_SEGURO: {
+    SLUG: 'PAG_SEGURO',
+    TITLE: 'PagSeguro ou Paypal',
+    ANIMATION: PagSeguroAnimation,
+  },
+  MONTHLY_DONATOR: {
+    SLUG: 'MONTHLY_DONATOR',
+    TITLE: 'Mantenedor Mensal',
+    ANIMATION: MensalPaymentAnimation,
+  },
+  DONATION: {
+    SLUG: 'DONATION',
+    TITLE: 'Doações',
+    ANIMATION: DonationAnimation,
+  },
+  PRAYS: {
+    SLUG: 'PRAYS',
+    TITLE: 'Rezas',
+    ANIMATION: ChristAnimation,
+  },
+  SHARER: {
+    SLUG: 'SHARER',
+    TITLE: 'Divulgação',
+    ANIMATION: MegaphoneAnimation,
+  },
+  BANK_TRANSACTION: {
+    SLUG: 'BANK_TRANSACTION',
+    TITLE: 'Transação bancária',
+    ANIMATION: BankAnimation,
+  },
+}
+
+export const DONATION = {
+  DESCRIPTION: `Atualmente a CVM conta com duas opções terceirizadas de doação. Por favor, selecione uma das duas opções abaixo para prosseguir:`,
+  LINKS: {
+    PAG_SEGURO: 'https://pagseguro.uol.com.br/checkout/nc/nl/donation/sender-identification.jhtml?t=d10d7b2b8be60f7f86f52be4a43790d24a107af7f556c1c8cf9b333966466f26&e=true#rmcl',
+    PAYPAL: 'https://www.paypal.com/donate?token=IC-SscYbE1E5E9wqfMPyppcSj4htnIkZ81YktuWCV8CeuKpI-NcRNUpHBC9erI6i5wEdZMSWT3cVrtG_'
+  }
+}

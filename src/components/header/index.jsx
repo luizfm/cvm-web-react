@@ -29,7 +29,7 @@ const navItems = [
   },
   {
     label: 'Ajude',
-    path: '/site/ajude'
+    path: '/site/help'
   }
 ]
 
