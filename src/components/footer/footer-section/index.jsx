@@ -30,11 +30,11 @@ const FooterSection = ({ title, list, className }) => {
 
 FooterSection.propTypes = {
   title: PropTypes.string.isRequired,
-  list: PropTypes.shape({
+  list: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     path: PropTypes.string,
     readOnly: PropTypes.bool
-  }).isRequired,
+  })).isRequired,
   className: PropTypes.string,
 }
 

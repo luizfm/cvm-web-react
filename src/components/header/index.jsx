@@ -25,7 +25,7 @@ const navItems = [
   },
   {
     label: 'Projetos',
-    path: '/site/projetos'
+    path: '/site/projects'
   },
   {
     label: 'Ajude',

@@ -1,0 +1,16 @@
+.container {
+  padding: 3.2rem;
+
+  .accordion-box {
+    box-shadow: 0 3px 10px rgb(214, 214, 214);
+    margin: 3.2rem;
+    border: 0.1rem solid var(--gray-8);
+    border-radius: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0rem;
+  }
+}

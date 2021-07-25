@@ -56,3 +56,30 @@ export const OUR_SPACE_TEXT = [
   `O CEI tem como objetivo oferecer atendimento de qualidade as crianças, em um espaço saudável e seguro, com tempo para brincar, criar, sonhar, descobrir e compartilhar, desenvolver suas inteligências e potencialidades durante a infância, contribuindo para a formação e transformação do seu conhecimento e socialização.`,
   `O CEI Criança Feliz – Educação Infantil está autorizado pela Resolução 003/99 do Conselho Municipal de Educação de São José de acordo com o Parecer n° 20/07.`
 ]
+
+export const PROJECTS = [
+  {
+    title: 'CEI: CENTRO EDUCACIONAL INFANTIL',
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+  },
+  {
+    title: 'CDE: CENTRO DE DESENVOLVIMENTO ESPORTIVO',
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+  },
+  {
+    title: 'CDC: CENTRO DE DESENVOLVIMENTO CULTURAL',
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+  },
+  {
+    title: 'CAS: CENTRO DE ATENDIMENTO SOCIAL',
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+  },
+  {
+    title: 'EDUCAÇÃO AMBIENTAL',
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+  },
+  {
+    title: 'SEGURANÇA ALIMENTAR',
+    description: `Descrever o projeto e o que o projeto representa para a instituição e como entrar em contato com a instituição para fazer parte do mesmo  Lorem ipsum dolor etum internum, lorem dolor iternum ipsum dolor lori internum dolor ipsum lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor lori internum dolor ipsum, lorem dolor iternum ipsum dolor.`
+  },
+]
