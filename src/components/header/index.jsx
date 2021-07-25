@@ -17,7 +17,7 @@ const navItems = [
   },
   {
     label: 'Educação Infatil',
-    path: '/site/educacao-infantil'
+    path: '/site/child-education'
   },
   {
     label: 'Acolhimento institucional',

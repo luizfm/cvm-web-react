@@ -7,6 +7,7 @@ import WelcomePage from '../views/welcome-page';
 import App from '../App'
 import Home from '../views/home'
 import History from '../views/history'
+import ChildEducation from '../views/child-education'
 
 const Routes = () => {
     return (
@@ -17,6 +18,7 @@ const Routes = () => {
                 <App path="/site">
                     <Home path="/home" />
                     <History path="/cvm" />
+                    <ChildEducation path="/child-education" />
                 </App>
             </ReachRouter>
         </>
