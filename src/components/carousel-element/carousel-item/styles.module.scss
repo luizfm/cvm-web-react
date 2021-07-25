@@ -56,4 +56,16 @@
       }
     }
   }
+
+  .donation-container {
+    .donation-payments {
+      flex-direction: column;
+      row-gap: 3.2rem;
+
+      .image {
+        width: 20rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
 }

@@ -22,3 +22,9 @@
     grid-area: content;
   }
 }
+
+@media (max-width: 500px) {
+  .modal-container {
+    width: 30rem;
+  }
+}
