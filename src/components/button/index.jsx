@@ -18,7 +18,16 @@ export const BUTTON_SIZES = {
 }
 
 
-const Button = ({ to, children, onClick, type, disabled, size, theme, className, ...restOfProps }) => {
+const Button = ({
+  to,
+  children,
+  onClick,
+  type,
+  disabled,
+  size, theme,
+  className,
+  ...restOfProps
+}) => {
 
   const buttonStyles = useMemo(
     () =>

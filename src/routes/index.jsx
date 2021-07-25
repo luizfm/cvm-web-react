@@ -9,6 +9,7 @@ import Home from '../views/home'
 import History from '../views/history'
 import ChildEducation from '../views/child-education'
 import Projects from '../views/projects'
+import Help from '../views/help';
 
 const Routes = () => {
     return (
@@ -21,6 +22,7 @@ const Routes = () => {
                     <History path="/cvm" />
                     <ChildEducation path="/child-education" />
                     <Projects path="/projects" />
+                    <Help path="/help" />
                 </App>
             </ReachRouter>
         </>
