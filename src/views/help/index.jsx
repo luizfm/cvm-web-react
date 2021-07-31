@@ -2,7 +2,9 @@ import React, { useMemo } from 'react';
 
 import CarouselElement from '../../components/carousel-element';
 import CarouselItem from '../../components/carousel-element/carousel-item'
-import { HELP_METHODS } from '../../constants/cvm-helper'
+import { HELP_METHODS } from '../../constants/help-page'
+
+import styles from './styles.module.scss'
 
 const Help = () => {
   const renderList = useMemo(() => Object.values(HELP_METHODS).map(item => (
@@ -11,7 +13,7 @@ const Help = () => {
   ), [])
 
   return (
-    <div>
+    <div className={styles['container']}>
       <CarouselElement carouselList={renderList} />
     </div>
   )

@@ -5,7 +5,7 @@ import Button, { BUTTON_THEMES } from '../../button'
 import StyledLottie from '../../styled-lottie'
 import Modal from '../../modal'
 import useToggle from '../../../hooks/use-toggle'
-import { DONATION, HELP_METHODS } from '../../../constants/cvm-helper'
+import { PAG_SEGURO, HELP_METHODS, HELP_METHODS_TEXTS } from '../../../constants/help-page'
 import InlineEdit from '../../inline-edit'
 import PagSeguroLogo from '../../../assets/logos/pagseguro-logo.png'
 import PaypalLogo from '../../../assets/logos/paypal-logo.png'
@@ -18,50 +18,46 @@ const CarouselItem = ({ title, animation, id }) => {
   const handleModalTitle = HELP_METHODS[id].TITLE
 
   const renderModalContent = useMemo(() => {
-    switch(id) {
-      case HELP_METHODS.ELETRIC_ENERGY.SLUG: {
-        return (
-          <>
-            <InlineEdit isMultiline />
-            <InlineEdit isMultiline />
-            <InlineEdit isMultiline />
-          </>
-        )
-      }
-      case HELP_METHODS.VOLUNTEER.SLUG: {
-        return (
-          <>
-            <InlineEdit isMultiline />
-            <InlineEdit isMultiline />
-            <InlineEdit isMultiline />
-            <InlineEdit isMultiline />
-          </>
-        )
-      }
-      case HELP_METHODS.PAG_SEGURO.SLUG: {
+      if (id === HELP_METHODS.PAG_SEGURO.SLUG) {
         return (
           <div className={styles['donation-container']}>
             <p className={styles['donation-description']}>
-              {DONATION.DESCRIPTION}
+              {PAG_SEGURO.description}
             </p>
             <div className={styles['donation-payments']}>
-              <a href={DONATION.LINKS.PAG_SEGURO} target="_blank" rel="noreferrer">
+              <a href={PAG_SEGURO.links.pagSeguro} target="_blank" rel="noreferrer">
                 <img className={styles.image} src={PagSeguroLogo} alt="PagSeguro link" />
               </a>
-              <a href={DONATION.LINKS.PAYPAL} target="_blank" rel="noreferrer">
+              <a href={PAG_SEGURO.links.paypal} target="_blank" rel="noreferrer">
                 <img className={styles.image} src={PaypalLogo} alt="Paypal link" />
               </a>
             </div>
           </div>
         )
       }
-      default: {
+
+      if (id === HELP_METHODS.BANK_TRANSACTION.SLUG) {
         return (
-          <InlineEdit isMultiline />
+          <div className={styles['bank-container']}>
+            <p>Banco: {HELP_METHODS_TEXTS[id].bank}</p>
+            <p>Agência: {HELP_METHODS_TEXTS[id].agency}</p>
+            <p>Conta: {HELP_METHODS_TEXTS[id].account}</p>
+          </div>
         )
       }
-    }
-  }, [id])
+
+      return (
+        <div className={styles['input-wrapper']}>
+          <InlineEdit
+            className={styles['textarea']}
+            label="Informações sobre esse método de doação"
+            hiddenLabel
+            isMultiline
+            value={HELP_METHODS_TEXTS[id]}
+          />
+        </div>
+      )
+    }, [id])
 
   return (
     <div className={styles.container}>
@@ -90,12 +86,12 @@ const CarouselItem = ({ title, animation, id }) => {
 CarouselItem.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string.isRequired,
-  animation: PropTypes.node,
+  animation: PropTypes.shape(),
 }
 
 CarouselItem.defaultProps = {
   title: '',
-  animation: <></>
+  animation: {},
 }
 
 export default CarouselItem
