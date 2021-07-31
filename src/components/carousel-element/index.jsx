@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import Carousel from 'react-elastic-carousel'
 
-import styles from './styles.module.scss'
+import './styles.css'
 
 const CarouselElement = ({ carouselList }) => {
   const breakPoints = [
@@ -36,7 +36,7 @@ const CarouselElement = ({ carouselList }) => {
 
 
   return (
-    <div className={styles['carousel-wrapper']}>
+    <div className="carousel-wrapper">
       <Carousel
         ref={carouselRef}
         breakPoints={breakPoints}

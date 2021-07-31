@@ -37,7 +37,7 @@ const StyledLottie = ({ animation, className }) => {
 
 const lottieStyles = {
   containerMobile: {
-      width: 270,
+      width: 150,
       height: 270,
   },
   container: {

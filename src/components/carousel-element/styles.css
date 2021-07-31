@@ -1,0 +1,39 @@
+/* Este arquivo CSS tem que ser no formato css, pois essa lib não reconhece
+   os modelos scss usados por padrão neste projeto
+*/
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.rec.rec-arrow {
+  background-color: white;
+  color: black;
+}
+
+.rec.rec-arrow:hover:enabled,
+.rec.rec-arrow:focus:enabled {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.rec.rec-dot_active {
+  background-color: var(--secondary);
+  box-shadow: 0 0 0.1rem 0.3rem var(--secondary);
+}
+
+.rec.rec-dot:hover,
+.rec.rec-dot:focus {
+  box-shadow: 0 0 0.1rem 0.3rem var(--secondary);
+}
+
+@media (max-width: 400px) {
+  .carousel-wrapper {
+    padding: 0.6rem;
+  }
+}

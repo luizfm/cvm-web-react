@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
+import TextareaAutosize from 'react-textarea-autosize';
 
 import Button from '../button'
 
@@ -61,22 +62,18 @@ const InlineEdit = ({
     onFocus,
     onBlur,
     name,
-    className: classnames(styles.input, inputClassName)
-  }), [inputClassName, inputValue, name, onBlur, onChange, onFocus])
+    className: classnames(styles.input, { [styles.textarea]: isMultiline }, inputClassName)
+  }), [inputClassName, inputValue, isMultiline, name, onBlur, onChange, onFocus])
 
   const inputElement = useMemo(() =>
     isMultiline ? (
-      <p>
-        <span
-          role="textbox"
-          contentEditable
-          {...inputProperties}
-          {...inputProps}
-          className={classnames(styles.textarea, inputProperties.className)}
-          >
-            {inputValue}
-          </span>
-      </p>
+      <TextareaAutosize
+        {...inputProperties}
+        {...inputProps}
+        className={classnames(styles.textarea, inputProperties.className)}
+      >
+        {inputValue}
+      </TextareaAutosize>
     ) : (
       <input {...inputProperties} {...inputProps} />
     ), [inputProperties, inputProps, inputValue, isMultiline])
