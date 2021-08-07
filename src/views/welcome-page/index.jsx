@@ -13,7 +13,7 @@ const WelcomePage = () => {
             <section className={styles.content}>
                 <img className={styles.logo} src={logoImg} alt="CVM Logo"/>
 
-                <h1 className={styles.introduction}>A CVM ajuda a comunidade com seus serviços de creche e orfanato</h1>
+                <h1 className={styles.introduction}>A CVM ajuda a comunidade com seus serviços de creche</h1>
 
                 <Button
                     className={styles['nav-button']}
