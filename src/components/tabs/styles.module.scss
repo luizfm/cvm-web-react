@@ -1,0 +1,33 @@
+.tabs-container {
+  border-radius: 0.8rem;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 0.1rem 0.3rem rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25), 0 1rem 1rem rgba(0, 0, 0, 0.22);
+  }
+
+  .tabs-list-container {
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    background-color: #ffffff;
+
+    .tab {
+      padding: 1.2rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--gray-64);
+    }
+  }
+
+  .tab-panels {
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    border-top: 0.1rem solid var(--gray-8);
+    padding: 1rem;
+
+    .item-panel {
+      padding: 1rem;
+    }
+  }
+}
