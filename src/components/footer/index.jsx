@@ -55,7 +55,7 @@ const Footer = () => {
       <FooterSection title="Contato" list={CONTACT_SECTION} className={styles.contact}/>
 
       <span className={styles.copyright}>
-        Copyright © 2021 - CVM - Todos os direitos reservados - Desenvolvido por estudantes da IESGF
+        Copyright © 2021 - CVM - Todos os direitos reservados - Desenvolvido por estudantes do IESGF
       </span>
     </footer>
   )
