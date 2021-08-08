@@ -10,6 +10,7 @@ import History from '../views/history'
 import ChildEducation from '../views/child-education'
 import Projects from '../views/projects'
 import Help from '../views/help';
+import Gallery from '../views/gallery'
 
 const Routes = () => {
     return (
@@ -21,6 +22,7 @@ const Routes = () => {
                     <Home path="/home" />
                     <History path="/cvm" />
                     <ChildEducation path="/child-education" />
+                    <Gallery path="/gallery" />
                     <Projects path="/projects" />
                     <Help path="/help" />
                 </App>

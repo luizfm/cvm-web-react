@@ -20,8 +20,8 @@ const navItems = [
     path: '/site/child-education'
   },
   {
-    label: 'Acolhimento institucional',
-    path: '/site/acolhimento-institucional'
+    label: 'Galeria',
+    path: '/site/gallery'
   },
   {
     label: 'Projetos',

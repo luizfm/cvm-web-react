@@ -1,0 +1,10 @@
+.elements-container {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 0.8rem;
+
+  .delete-button {
+    width: 10rem;
+    justify-self: end;
+  }
+}
