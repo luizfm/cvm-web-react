@@ -7,6 +7,10 @@ import Button from '../button'
 
 import styles from './styles.module.scss'
 
+const MOCK_USER = {
+  user: undefined,
+}
+
 const InlineEdit = ({
   label,
   hiddenLabel,
@@ -62,7 +66,7 @@ const InlineEdit = ({
     onFocus,
     onBlur,
     name,
-    className: classnames(styles.input, { [styles.textarea]: isMultiline }, inputClassName)
+    className: classnames(styles.input, { [styles.textarea]: isMultiline, [styles.focused]: MOCK_USER.user }, inputClassName)
   }), [inputClassName, inputValue, isMultiline, name, onBlur, onChange, onFocus])
 
   const inputElement = useMemo(() =>
@@ -70,7 +74,7 @@ const InlineEdit = ({
       <TextareaAutosize
         {...inputProperties}
         {...inputProps}
-        className={classnames(styles.textarea, inputProperties.className)}
+        className={classnames(styles.textarea, inputProperties.className, { [styles.focused]: MOCK_USER.user })}
       >
         {inputValue}
       </TextareaAutosize>
@@ -89,7 +93,7 @@ const InlineEdit = ({
         </label>
         {inputElement}
       </div>
-      {isFocused && (
+      {isFocused && MOCK_USER.user && (
         <div className={styles['buttons-container']}>
           <Button onClick={onCancelClick} className={styles['cancel-button']}>Cancel</Button>
           <Button onClick={onSaveClick} className={styles['save-button']}>Save</Button>

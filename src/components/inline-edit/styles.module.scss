@@ -35,8 +35,10 @@
         background-color: transparent;
       }
 
-      &:focus {
-        outline: 0.1rem solid var(--gray-24);
+      &.focused {
+        &:focus {
+          outline: 0.1rem solid var(--gray-24);
+        }
       }
     }
 
@@ -47,6 +49,13 @@
       min-height: 4rem;
       line-height: 2.4rem;
       text-align: justify;
+      resize: none;
+
+      &.focused {
+        &:focus {
+          resize: vertical;
+        }
+      }
     }
   }
 
