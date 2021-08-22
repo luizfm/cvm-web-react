@@ -8,6 +8,7 @@ import styles from './styles.module.scss'
 export const BUTTON_THEMES = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
+  GHOST: 'ghost',
   GREEN: 'green'
 }
 

@@ -39,6 +39,11 @@
   }
 }
 
+.ghost {
+  background-color: transparent;
+  color: var(--gray-80);
+}
+
 .small {
   height: 2.4rem;
 }

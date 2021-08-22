@@ -42,9 +42,9 @@ const VideosGallery = () => {
         height="600"
         src={MOCK_VIDEOS.mainVideoUrl}
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullscreen
       />
 
         <h2 className={styles['others-videos-title']}>Outros vídeos</h2>
@@ -59,9 +59,9 @@ const VideosGallery = () => {
                 height="100%"
                 src={video.url}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullscreen
               />
               <Button className={styles['delete-button']}>Remove vídeo</Button>
             </div>
