@@ -8,6 +8,7 @@ import PhotoItem from './photo-item'
 import useToggle from '../../../hooks/use-toggle'
 import Button from '../../../components/button'
 import AddPhotoModal from './add-photo-modal'
+import { useWindowSize } from '../../../hooks/useWindowSize'
 
 const MOCK_IMAGES = [
   {
@@ -35,6 +36,7 @@ const MOCK_IMAGES = [
 const PhotosGallery = () => {
   const [isAddPhotosModalOpen, onToggleAddPhotosModal] = useToggle()
   const [photosList, setPhotosList] = useState(MOCK_IMAGES)
+  const { isMobile } = useWindowSize();
 
   const onRemoveClick = useCallback(id => {
     if(photosList.length > 1) {
@@ -46,7 +48,6 @@ const PhotosGallery = () => {
     return window.alert("Você não ficar sem fotos. Por favor adicione outra para poder remover esta")
   }, [photosList])
 
-  console.log(photosList)
 
   const renderElements = useMemo(() => photosList.map(item => (
     <PhotoItem
@@ -56,13 +57,14 @@ const PhotosGallery = () => {
       imageDescription={item.label}
       label={item.label}
       onRemove={onRemoveClick}
+      allowDelete={!isMobile}
     />
-  )), [onRemoveClick, photosList])
+  )), [isMobile, onRemoveClick, photosList])
 
   return (
     <div className={styles['photos-gallery-container']}>
       <CarouselElement carouselList={renderElements} />
-      <Button onClick={onToggleAddPhotosModal}>Adicionar Imagem</Button>
+      {!isMobile && <Button onClick={onToggleAddPhotosModal}>Adicionar Imagem</Button>}
       {isAddPhotosModalOpen && (
         <AddPhotoModal onClose={onToggleAddPhotosModal} />
       )}

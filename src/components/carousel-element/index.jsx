@@ -1,10 +1,14 @@
-import React, { useRef } from 'react'
+import React, { useMemo, useRef } from 'react'
 import PropTypes from 'prop-types'
 import Carousel from 'react-elastic-carousel'
+
+import { useMediaQuery } from '../../hooks/mediaQuery'
 
 import './styles.css'
 
 const CarouselElement = ({ carouselList }) => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   const breakPoints = [
     {
       width: 1, itemsToShow: 1
@@ -19,6 +23,10 @@ const CarouselElement = ({ carouselList }) => {
       width: 1200, itemsToShow: 1
     }
   ]
+
+  const settings = useMemo(() => ({
+    showArrows: !isMobile,
+  }), [isMobile])
 
   const carouselRef = useRef(null)
   const onNextStart = (currentItem, nextItem) => {
@@ -43,6 +51,7 @@ const CarouselElement = ({ carouselList }) => {
         onNextStart={onNextStart}
         onPrevStart={onPrevStart}
         disableArrowsOnEnd={false}
+        {...settings}
       >
         {carouselList}
       </Carousel>

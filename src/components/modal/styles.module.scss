@@ -1,9 +1,9 @@
 .modal-container {
   width: 48rem;
   background-color: white;
-  padding: 3.2rem 3.2rem 0;
+  padding: 3.2rem 3.2rem;
   border-radius: 0.8rem;
-  overflow-y: auto;
+  overflow-y: scroll;
   max-height: calc(100vh - 20rem);
   display: grid;
   grid-template: auto 1fr / 1fr 4rem;

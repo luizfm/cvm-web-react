@@ -29,7 +29,7 @@ export const CVM_IDENTITY = {
     e evangelizando-os nos ensinamentos de Jesus.`
   },
   VALUES: {
-    TEXT: `- Ética; - Transparência; - Credibilidade; - Competência; Integridade; - Seriedade; - Respeito às diferenças; - Temor a Deus.`
+    TEXT: ["Ética", "Transparência", "Credibilidade", "Competência", "Integridade", "Seriedade", "Respeito às diferenças", "Temor a Deus."]
   }
 }
 

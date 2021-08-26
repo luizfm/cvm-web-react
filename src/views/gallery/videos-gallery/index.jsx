@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 
-import Button from '../../../components/button'
+import Button, { BUTTON_THEMES } from '../../../components/button'
+import { useWindowSize } from '../../../hooks/useWindowSize'
+import { ReactComponent as CloseIcon } from '../../../assets/icons/close-black-icon.svg'
 
 import styles from './styles.module.scss'
 
@@ -32,6 +34,17 @@ const MOCK_VIDEOS = {
 }
 
 const VideosGallery = () => {
+  const { isMobile } = useWindowSize()
+
+  const [videos, setVideos] = useState(MOCK_VIDEOS)
+
+  const handleOnRemove = useCallback(video => {
+    const filteredVideos = videos.otherVideos.filter(item => item.title !== video)
+    console.log('filter', filteredVideos)
+    setVideos(prevValue => ({...prevValue, otherVideos: filteredVideos}))
+  }, [videos.otherVideos])
+
+  console.log('videos', videos)
 
   return (
     <section className={styles['videos-container']}>
@@ -39,7 +52,7 @@ const VideosGallery = () => {
       <iframe
         className={styles['main-video']}
         width="100%"
-        height="600"
+        height={isMobile ? "300" : "600"}
         src={MOCK_VIDEOS.mainVideoUrl}
         title="YouTube video player"
         frameBorder="0"
@@ -50,7 +63,7 @@ const VideosGallery = () => {
         <h2 className={styles['others-videos-title']}>Outros vídeos</h2>
 
         <div className={styles['other-videos-container']}>
-          {MOCK_VIDEOS.otherVideos.map(video => (
+          {videos.otherVideos.map(video => (
             <div key={video.title} className={styles['video-card']}>
               <p>{video.title}</p>
               <iframe
@@ -63,12 +76,16 @@ const VideosGallery = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullscreen
               />
-              <Button className={styles['delete-button']}>Remove vídeo</Button>
+              {!isMobile && (
+                  <Button theme={BUTTON_THEMES.SECONDARY} className={styles['delete-button']} onClick={() => handleOnRemove(video.title)} aria-label="Deletar foto">
+                    <CloseIcon />
+                 </Button>
+              )}
             </div>
           ))}
         </div>
 
-        <Button>Adicionar vídeo</Button>
+        {!isMobile && <Button>Adicionar vídeo</Button>}
     </section>
   )
 }

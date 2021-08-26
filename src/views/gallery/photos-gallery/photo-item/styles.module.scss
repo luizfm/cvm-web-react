@@ -1,10 +1,17 @@
 .elements-container {
   display: grid;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
   row-gap: 0.8rem;
+  position: relative;
+
+  .image {
+    object-fit: cover;
+  }
 
   .delete-button {
-    width: 10rem;
-    justify-self: end;
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+    width: 4rem;
   }
 }

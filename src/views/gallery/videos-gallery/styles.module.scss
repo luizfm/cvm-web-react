@@ -1,12 +1,20 @@
 .videos-container {
   padding: 3.2rem;
 
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
   .main-video {
     border-radius: 0.8rem;
   }
 
   .others-videos-title {
     padding: 4rem 0;
+
+    @media (max-width: 768px) {
+      padding-bottom: 2.4rem;
+    }
   }
 
   .other-videos-container {
@@ -16,9 +24,17 @@
     row-gap: 6.4rem;
     padding-bottom: 3.2rem;
 
-    .video-card {
+    @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
+      padding-bottom: 0;
+    }
+
+    .video-card {
+      display: flex;
+      row-gap: 2.4rem;
+      flex-direction: column;
+      position: relative;
 
       .video {
         border-radius: 0.4rem;
@@ -26,8 +42,10 @@
       }
 
       .delete-button {
-        margin-top: 1.6rem;
-        width: 15rem;
+        top: 8;
+        right: 0;
+        width: 4rem;
+        position: absolute;
       }
     }
   }
