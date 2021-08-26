@@ -12,8 +12,6 @@ const AddPhotoModal = ({ onClose }) => {
   const [photosPreview, setPhotoPreview] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log(photosPreview)
-
   const onAddPhoto = useCallback(event => {
     setIsLoading(true)
     setPhotoPreview(URL.createObjectURL(event.target.files[0]))

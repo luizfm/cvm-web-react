@@ -4,6 +4,10 @@
   row-gap: 0.8rem;
   position: relative;
 
+  .image {
+    object-fit: cover;
+  }
+
   .delete-button {
     position: absolute;
     top: 6rem;
