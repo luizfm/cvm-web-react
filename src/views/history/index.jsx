@@ -116,8 +116,14 @@ const History = () => {
 
                 {identityItems.map(item => (
                     <div key={item.title} className={classnames(styles['identity-wrapper'], item.className)}>
-                        <strong className={styles.title}>{item.title}</strong>
-                        <p className={styles.text}>{item.text}</p>
+                        <p className={styles.title}>{item.title}</p>
+                        {item.title !== "Valores" ? (
+                            <p className={styles.text}>{item.text}</p>
+                        ) : (
+                            item.text.map(text => (
+                                <p className={styles.text}>{text}</p>
+                            ))
+                        )}
                     </div>
                 ))}
 

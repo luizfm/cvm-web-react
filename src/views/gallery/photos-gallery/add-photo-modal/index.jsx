@@ -9,7 +9,7 @@ import styles from './styles.module.scss'
 import Button from '../../../../components/button'
 
 const AddPhotoModal = ({ onClose }) => {
-  const [photosPreview, setPhotoPreview] = useState([])
+  const [photosPreview, setPhotoPreview] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
   console.log(photosPreview)
